@@ -1,5 +1,5 @@
 import React from 'react';
-import JumboCards from './containers/jumboCards';
+import { JumboCards } from '../containers';
 
 export default function Jumbotron(props) {
   const { jumboData } = props;
