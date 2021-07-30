@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { Button } from '@material-ui/core';
+import { Link as ReactRouterLink } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -32,16 +33,23 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export default function Header() {
+export default function Header(props) {
+  const { to } = props;
   const classes = useStyles();
   return (
     <AppBar position="static" className={classes.root}>
       <Toolbar>
         <img alt="logo" className={classes.image} src="/images/logo.svg" />
         <span className={classes.span} />
-        <Button color="primary" variant="contained">
-          Sign In
-        </Button>
+        {to !== '' ? (
+          <ReactRouterLink to={to} style={{ textDecoration: 'none' }}>
+            <Button color="primary" variant="contained">
+              Sign In
+            </Button>
+          </ReactRouterLink>
+        ) : (
+          <div />
+        )}
       </Toolbar>
     </AppBar>
   );

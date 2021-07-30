@@ -4,7 +4,7 @@ import React from 'react';
 import { Colors } from '../../utils/constants';
 import '../../index.css';
 
-const listOfData = [
+const listOfDataHome = [
   'FAQ',
   'Help Centre',
   'Account',
@@ -22,15 +22,17 @@ const listOfData = [
   'Only on Netflix',
 ];
 
+const listDataOther = ['FAQ', 'Help Centre', 'Terms of Use', 'Privacy', 'Cookie Preferences', 'Corporate Information'];
+
 const useStyles = makeStyles(() => ({
   root: {
-    backgroundColor: Colors.backgroundColor,
+    backgroundColor: (props) => props.color,
     display: 'block',
     justifyContent: 'center',
   },
   content: {
     display: 'flex',
-    backgroundColor: Colors.backgroundColor,
+    backgroundColor: (props) => props.color,
     padding: '70px 45px',
     maxWidth: '1000px',
     margin: '0 auto',
@@ -62,8 +64,9 @@ const useStyles = makeStyles(() => ({
     position: 'relative',
   },
 }));
-export default function Footer() {
-  const classes = useStyles();
+export default function Footer(props) {
+  const { where } = props;
+  const classes = useStyles(props);
   return (
     <fragment className={classes.root}>
       <div className={classes.content}>
@@ -72,11 +75,17 @@ export default function Footer() {
             <p>Questions? Call 000-800-040-1843</p>
           </Grid>
           <text className={classes.divider} />
-          {listOfData.map((e) => (
-            <Grid item xs={6} sm={4} md={3} className={classes.text}>
-              <p>{e}</p>
-            </Grid>
-          ))}
+          {where === 'HOME'
+            ? listOfDataHome.map((e) => (
+                <Grid item xs={6} sm={4} md={3} className={classes.text}>
+                  <p>{e}</p>
+                </Grid>
+              ))
+            : listDataOther.map((e) => (
+                <Grid item xs={6} sm={4} md={3} className={classes.text}>
+                  <p>{e}</p>
+                </Grid>
+              ))}
           <span className={classes.divider} />
           <Grid xs={12} md={12} className={classes.text}>
             <p>Netflix India</p>

@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
   root: {
-    height: '707.323px',
+    height: '100%',
     maxWidth: '100%',
     zIndex: 10,
     objectFit: 'cover',
