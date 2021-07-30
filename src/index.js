@@ -1,32 +1,29 @@
 import { ThemeProvider } from '@material-ui/core';
 import { createTheme, responsiveFontSizes } from '@material-ui/core/styles';
-import createPalette from '@material-ui/core/styles/createPalette';
-import createTypography from '@material-ui/core/styles/createTypography';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app';
 import './index.css';
 
-
 let theme = createTheme({
   typography: {
     fontSize: 19.2,
     button: {
-      textTransform: "none"
-    }
+      textTransform: 'none',
+    },
   },
   palette: {
-    primary:{
-      main:"#E50914"
-    }
+    primary: {
+      main: '#E50914',
+    },
   },
 });
 
 theme = responsiveFontSizes(theme);
 ReactDOM.render(
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>,
+  <ThemeProvider theme={theme}>
+    <App />
+  </ThemeProvider>,
   document.getElementById('root')
 );
 
