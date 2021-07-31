@@ -67,6 +67,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+// Jumbo cards
 export default function JumboCards(props) {
   const classes = useStyles();
   const { direction } = props;
