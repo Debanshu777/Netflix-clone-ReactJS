@@ -8,7 +8,7 @@ export default function SignIn() {
     <div>
       <Header to="" />
       <Backdrop />
-      <Footer color={Colors.blackTransparent} />
+      {/* <Footer color={Colors.blackTransparent} /> */}
     </div>
   );
 }
