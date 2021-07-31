@@ -1,7 +1,5 @@
 import { Grid, makeStyles } from '@material-ui/core';
 import React from 'react';
-
-import { Colors } from '../../utils/constants';
 import '../../index.css';
 
 const listOfDataHome = [
