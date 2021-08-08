@@ -1,3 +1,7 @@
+*{
+  margin:0;
+  padding:0;
+}
 @font-face {
     font-family: 'Netflix Sans';
     src: local('NetflixSansRegular'),url("./assets/fonts/NetflixSansRegular.ttf") format('ttf');
