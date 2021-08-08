@@ -13,7 +13,7 @@ export default function app() {
         <Browse />
       </Route>
       <Route exact path={ROUTES.SIGN_IN}>
-        <SignIn />
+        <Browse />
       </Route>
       <Route exact path={ROUTES.SIGN_UP}>
         <SignUp />
