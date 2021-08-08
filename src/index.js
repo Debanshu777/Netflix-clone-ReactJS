@@ -2,7 +2,7 @@ import { ThemeProvider } from '@material-ui/core';
 import { createTheme, responsiveFontSizes } from '@material-ui/core/styles';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './app';
 import './index.css';
 
 let theme = createTheme({

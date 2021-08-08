@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Home, Browse, SignIn, SignUp } from './components/screen';
 import * as ROUTES from './utils/routes';
 
-export default function App() {
+export default function app() {
   return (
     <Router>
       <Route exact path={ROUTES.HOME}>
