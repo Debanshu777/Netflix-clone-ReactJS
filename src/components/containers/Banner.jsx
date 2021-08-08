@@ -53,8 +53,9 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export default function Banner() {
+export default function Banner(props) {
   const classes = useStyles();
+  const { bannerData } = props;
   function truncate(string, n) {
     return string?.length > n ? `${string.substr(0, n - 1)}...` : string;
   }
@@ -64,16 +65,17 @@ export default function Banner() {
       style={{
         backgroundPosition: 'center center',
         backgroundSize: 'cover',
-        backgroundImage: `url('https://wallpapercave.com/wp/wp1917118.jpg')`,
+        backgroundAttachment: 'fixed',
+        backgroundImage: `url('https://image.tmdb.org/t/p/original/${bannerData?.backdrop_path}')`,
       }}
     >
       <div className={classes.bannerContainer}>
-        <h1 className={classes.bannerTitle}>Movie Name</h1>
+        <h1 className={classes.bannerTitle}>{bannerData.name}</h1>
         <div className={classes.bannerButtons}>
           <Button className={classes.button}>Play</Button>
           <Button className={classes.button}>My List</Button>
         </div>
-        <h1 className={classes.bannerDescription}>{truncate(`here`, 150)}</h1>
+        <h1 className={classes.bannerDescription}>{truncate(bannerData.overview, 150)}</h1>
       </div>
       <div className={classes.bannerFade} />
     </header>
