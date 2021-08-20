@@ -9,10 +9,9 @@ import Navbar from '../containers/Navbar';
 export default function Browse() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getData());
+    dispatch(getData(requests.fetchNetflixOriginals));
   }, []);
   const netflixOriginalsData = useSelector((state) => state.fetchNetflixOriginals.payload);
-  console.log(netflixOriginalsData);
   return (
     <div>
       <Navbar />

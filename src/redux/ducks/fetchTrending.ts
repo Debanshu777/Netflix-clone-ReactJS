@@ -1,20 +1,19 @@
-export const GET_NETFLIX_ORIGINAL_DATA = 'get_data';
-const SET_NETFLIX_ORIGINAL_DATA = 'set_data';
+export const GET_FETCH_TRENDING_DATA = 'get_data';
+const SET_FETCH_TRENDING_DATA = 'set_data';
 
 /**
- * @param  {GET_NETFLIX_ORIGINAL_DATA} =>({type
+ * @param  {GET_FETCH_TRENDING_DATA} =>({type
  * @param  {} }
  */
-export const getData = (payload: any) => ({
-  type: GET_NETFLIX_ORIGINAL_DATA,
-  payload,
+export const getData = () => ({
+  type: GET_FETCH_TRENDING_DATA,
 });
 
 /**
  * @param  {any} payload
  */
 export const setData = (payload: any) => ({
-  type: SET_NETFLIX_ORIGINAL_DATA,
+  type: SET_FETCH_TRENDING_DATA,
   payload,
 });
 
@@ -25,7 +24,7 @@ const initialState = {
 
 export default (state = initialState, action: any) => {
   switch (action.type) {
-    case SET_NETFLIX_ORIGINAL_DATA: {
+    case SET_FETCH_TRENDING_DATA: {
       const { payload } = action;
       return { ...state, payload };
     }
