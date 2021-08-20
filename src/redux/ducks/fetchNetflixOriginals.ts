@@ -5,9 +5,9 @@ const SET_NETFLIX_ORIGINAL_DATA = 'set_data';
  * @param  {GET_NETFLIX_ORIGINAL_DATA} =>({type
  * @param  {} }
  */
-export const getData = (payload: any) => ({
+export const getData = (props: any) => ({
   type: GET_NETFLIX_ORIGINAL_DATA,
-  payload,
+  props,
 });
 
 /**

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getData } from '../../redux/ducks/fetchNetflixOriginals';
+import { getData, setData } from '../../redux/ducks/fetchNetflixOriginals';
 import requests from '../../services/requests';
 import Banner from '../containers/Banner';
 import DynamicRow from '../containers/DynamicRow';
@@ -9,7 +9,7 @@ import Navbar from '../containers/Navbar';
 export default function Browse() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getData(requests.fetchNetflixOriginals));
+    dispatch(getData({ url: requests.fetchNetflixOriginals, setDataFunction: setData }));
   }, []);
   const netflixOriginalsData = useSelector((state) => state.fetchNetflixOriginals.payload);
   return (

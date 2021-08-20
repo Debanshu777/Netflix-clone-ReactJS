@@ -1,14 +1,13 @@
 import { call, put } from 'redux-saga/effects';
-import { setData } from '../../ducks/fetchNetflixOriginals';
 import requestGetData from '../requests/requestDynamic';
 
 export function* handleGetDynamic(action: any): any {
   console.log(action.payload);
   try {
-    const response = yield call(requestGetData, { requestURL: action.payload });
+    const response = yield call(requestGetData, { requestURL: action.props.url });
     const { data } = response;
     console.log(data);
-    yield put(setData(data));
+    yield put(action.props.setDataFunction(data));
   } catch (error) {
     console.log(error);
   }
