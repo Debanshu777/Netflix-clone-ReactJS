@@ -49,7 +49,7 @@ const useStyles = makeStyles(() => ({
   },
   bannerFade: {
     height: '7.4rem',
-    backgroundImage: 'linear-gradient(180deg,transparent,rgba(37,37,0.61),#111);',
+    backgroundImage: 'linear-gradient(180deg,transparent,#111);',
   },
 }));
 

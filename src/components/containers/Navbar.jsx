@@ -48,10 +48,10 @@ const useStyles = makeStyles(() => ({
 export default function Navbar() {
   const [show, setShow] = useState(false);
   const transitionNavBar = () => {
-    if (window.scrollY > 100) {
-      setShow(false);
-    } else {
+    if (window.scrollY < 200) {
       setShow(true);
+    } else {
+      setShow(false);
     }
   };
   useEffect(() => {
