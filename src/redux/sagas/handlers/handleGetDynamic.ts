@@ -1,5 +1,5 @@
 import { call, put } from 'redux-saga/effects';
-import requestGetData from '../requests/requestDynamic';
+import requestGetData from '../requests/netflixOriginals';
 
 export function* handleGetDynamic(action: any): any {
   console.log(action.payload);

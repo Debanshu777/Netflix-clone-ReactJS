@@ -1,16 +1,16 @@
-export const GET_FETCH_TRENDING_DATA = 'get_data';
-const SET_FETCH_TRENDING_DATA = 'set_data';
+export const GET_FETCH_TOP_RATED = 'get_data';
+const SET_FETCH_TOP_RATED = 'set_data';
 
-export const getDataFetchTrending = (props: any) => ({
-  type: GET_FETCH_TRENDING_DATA,
+export const getDataFetchTopRated = (props: any) => ({
+  type: GET_FETCH_TOP_RATED,
   props,
 });
 
 /**
  * @param  {any} payload
  */
-export const setDataFetchTrending = (payload: any) => ({
-  type: SET_FETCH_TRENDING_DATA,
+export const setDataFetchTopRated = (payload: any) => ({
+  type: SET_FETCH_TOP_RATED,
   payload,
 });
 
@@ -21,7 +21,7 @@ const initialState = {
 
 export default (state = initialState, action: any) => {
   switch (action.type) {
-    case SET_FETCH_TRENDING_DATA: {
+    case SET_FETCH_TOP_RATED: {
       const { payload } = action;
       return { ...state, payload };
     }

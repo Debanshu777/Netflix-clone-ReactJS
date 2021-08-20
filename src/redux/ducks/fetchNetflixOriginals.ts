@@ -5,7 +5,7 @@ const SET_NETFLIX_ORIGINAL_DATA = 'set_data';
  * @param  {GET_NETFLIX_ORIGINAL_DATA} =>({type
  * @param  {} }
  */
-export const getData = (props: any) => ({
+export const getDataFetchNetflixOriginals = (props: any) => ({
   type: GET_NETFLIX_ORIGINAL_DATA,
   props,
 });
@@ -13,7 +13,7 @@ export const getData = (props: any) => ({
 /**
  * @param  {any} payload
  */
-export const setData = (payload: any) => ({
+export const setDataFetchNetflixOriginals = (payload: any) => ({
   type: SET_NETFLIX_ORIGINAL_DATA,
   payload,
 });
@@ -23,6 +23,7 @@ const initialState = {
   results: [],
 };
 
+export const getDataFromStore = (state: any) => state.fetchNetflixOriginals.payload;
 export default (state = initialState, action: any) => {
   switch (action.type) {
     case SET_NETFLIX_ORIGINAL_DATA: {
