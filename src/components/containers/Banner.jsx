@@ -26,7 +26,7 @@ const useStyles = makeStyles(() => ({
     outline: 'none',
     border: 'none',
     fontWeight: '700',
-    boredrRadius: '0.2vw',
+    borderRadius: '0.2vw',
     paddingLeft: '2rem',
     paddingRight: '2rem',
     marginRight: '1rem',
@@ -53,12 +53,16 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export default function Banner(props) {
+const Banner = (props) => {
   const classes = useStyles();
   const { bannerData } = props;
-  function truncate(string, n) {
-    return string?.length > n ? `${string.substr(0, n - 1)}...` : string;
-  }
+
+  /**
+   * @param  {} string
+   * @param  {} n
+   */
+  const truncate = (string, n) => (string?.length > n ? `${string.substr(0, n - 1)}...` : string);
+
   return (
     <header
       className={classes.banner}
@@ -70,14 +74,16 @@ export default function Banner(props) {
       }}
     >
       <div className={classes.bannerContainer}>
-        <h1 className={classes.bannerTitle}>{bannerData.name}</h1>
+        <h1 className={classes.bannerTitle}>{bannerData?.name || bannerData?.title || bannerData?.original_name}</h1>
         <div className={classes.bannerButtons}>
           <Button className={classes.button}>Play</Button>
           <Button className={classes.button}>My List</Button>
         </div>
-        <h1 className={classes.bannerDescription}>{truncate(bannerData.overview, 150)}</h1>
+        <h1 className={classes.bannerDescription}>{truncate(bannerData?.overview, 150)}</h1>
       </div>
       <div className={classes.bannerFade} />
     </header>
   );
-}
+};
+
+export default Banner;

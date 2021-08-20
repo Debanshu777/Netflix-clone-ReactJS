@@ -24,6 +24,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "doc": "jsdoc -c jsdoc.json",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -58,6 +59,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "jsdoc": "^3.6.7",
     "prettier": "^2.3.2"
   }
 }
