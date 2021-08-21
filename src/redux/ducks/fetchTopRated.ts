@@ -1,5 +1,5 @@
-export const GET_FETCH_TOP_RATED = 'get_data';
-const SET_FETCH_TOP_RATED = 'set_data';
+export const GET_FETCH_TOP_RATED = 'get_fetch_top_rated_data';
+const SET_FETCH_TOP_RATED = 'set_fetch_top_rated_data';
 
 export const getDataFetchTopRated = (props: any) => ({
   type: GET_FETCH_TOP_RATED,

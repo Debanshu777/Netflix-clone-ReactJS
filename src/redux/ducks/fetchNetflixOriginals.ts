@@ -1,5 +1,5 @@
-export const GET_NETFLIX_ORIGINAL_DATA = 'get_data';
-const SET_NETFLIX_ORIGINAL_DATA = 'set_data';
+export const GET_NETFLIX_ORIGINAL_DATA = 'get_netflix_originals_data';
+const SET_NETFLIX_ORIGINAL_DATA = 'set_netflix_originals_data';
 
 /**
  * @param  {GET_NETFLIX_ORIGINAL_DATA} =>({type

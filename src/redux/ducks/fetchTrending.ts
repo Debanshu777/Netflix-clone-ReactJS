@@ -1,5 +1,5 @@
-export const GET_FETCH_TRENDING_DATA = 'get_data';
-const SET_FETCH_TRENDING_DATA = 'set_data';
+export const GET_FETCH_TRENDING_DATA = 'get_fetch_trending_data';
+const SET_FETCH_TRENDING_DATA = 'set_fetch_trending_data';
 
 export const getDataFetchTrending = (props: any) => ({
   type: GET_FETCH_TRENDING_DATA,

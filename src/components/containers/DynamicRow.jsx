@@ -10,6 +10,7 @@ const useReduxListCommonSelectors = (keyword) => ({
   fetchTopRated: useSelector((state) => state.fetchTopRated.payload),
   fetchTrending: useSelector((state) => state.fetchTrending.payload),
 });
+const baseUrl = 'https://image.tmdb.org/t/p/original/';
 
 export default function DynamicRow({ title, fetchUrl, getDataFunction, setDataFunction, store, isLarge = false }) {
   const dispatch = useDispatch();
@@ -22,12 +23,17 @@ export default function DynamicRow({ title, fetchUrl, getDataFunction, setDataFu
       })
     );
   }, [fetchUrl]);
-  const movie = useReduxListCommonSelectors()[store];
-
-  console.log(movie);
+  const movies = useReduxListCommonSelectors()[store].results;
   return (
     <div>
       <h2>{title}</h2>
+      {movies?.map((movie) =>
+        movie.poster_path !== undefined ? (
+          <img src={`${baseUrl}${isLarge ? movie.poster_path : movie.backdrop_path}`} alt="" />
+        ) : (
+          <div />
+        )
+      )}
     </div>
   );
 }
