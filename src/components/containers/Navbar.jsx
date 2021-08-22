@@ -48,7 +48,7 @@ const useStyles = makeStyles(() => ({
 export default function Navbar() {
   const [show, setShow] = useState(false);
   const transitionNavBar = () => {
-    if (window.scrollY > 100) {
+    if (window.scrollY < 100) {
       setShow(false);
     } else {
       setShow(true);

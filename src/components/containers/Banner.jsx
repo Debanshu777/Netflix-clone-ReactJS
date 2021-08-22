@@ -26,7 +26,7 @@ const useStyles = makeStyles(() => ({
     outline: 'none',
     border: 'none',
     fontWeight: '700',
-    boredrRadius: '0.2vw',
+    borderRadius: '0.2vw',
     paddingLeft: '2rem',
     paddingRight: '2rem',
     marginRight: '1rem',
@@ -49,33 +49,41 @@ const useStyles = makeStyles(() => ({
   },
   bannerFade: {
     height: '7.4rem',
-    backgroundImage: 'linear-gradient(180deg,transparent,rgba(37,37,0.61),#111);',
+    backgroundImage: 'linear-gradient(180deg,transparent,#111);',
   },
 }));
 
-export default function Banner() {
+const Banner = (props) => {
   const classes = useStyles();
-  function truncate(string, n) {
-    return string?.length > n ? `${string.substr(0, n - 1)}...` : string;
-  }
+  const { bannerData } = props;
+
+  /**
+   * @param  {} string
+   * @param  {} n
+   */
+  const truncate = (string, n) => (string?.length > n ? `${string.substr(0, n - 1)}...` : string);
+
   return (
     <header
       className={classes.banner}
       style={{
         backgroundPosition: 'center center',
         backgroundSize: 'cover',
-        backgroundImage: `url('https://wallpapercave.com/wp/wp1917118.jpg')`,
+        backgroundAttachment: 'fixed',
+        backgroundImage: `url('https://image.tmdb.org/t/p/original/${bannerData?.backdrop_path}')`,
       }}
     >
       <div className={classes.bannerContainer}>
-        <h1 className={classes.bannerTitle}>Movie Name</h1>
+        <h1 className={classes.bannerTitle}>{bannerData?.name || bannerData?.title || bannerData?.original_name}</h1>
         <div className={classes.bannerButtons}>
           <Button className={classes.button}>Play</Button>
           <Button className={classes.button}>My List</Button>
         </div>
-        <h1 className={classes.bannerDescription}>{truncate(`here`, 150)}</h1>
+        <h1 className={classes.bannerDescription}>{truncate(bannerData?.overview, 150)}</h1>
       </div>
       <div className={classes.bannerFade} />
     </header>
   );
-}
+};
+
+export default Banner;

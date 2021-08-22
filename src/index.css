@@ -1,8 +1,10 @@
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
+  -ms-overflow-style: none;
 }
 @font-face {
-    font-family: 'Netflix Sans';
-    src: local('NetflixSansRegular'),url("./assets/fonts/NetflixSansRegular.ttf") format('ttf');
-  }
+  font-family: 'Netflix Sans';
+  src: local('NetflixSansRegular'),
+    url('./assets/fonts/NetflixSansRegular.ttf') format('ttf');
+}
